@@ -1,13 +1,13 @@
 import {FaShoppingCart} from "react-icons/fa"
 import { useSelector } from "react-redux"
 import "./style.css"
-const Header = ({showModal,setShowModal}) => {
+const Header = ({showCart,setShowCart}) => {
 const totalQuantity = useSelector(state => state.cart.cartTotalQuantity)
 return (
 <div className="header">
-<a href="#" className="p-4">store</a>
-<a href="#" className="p-4">about</a>
-<button onClick={()=> setShowModal(!showModal)}><FaShoppingCart/>cart ({totalQuantity})</button>
+<button onClick={()=> setShowCart(!showCart)}  className="p-4">store</button>
+<button  className="p-4">about</button>
+<button onClick={()=> setShowCart(!showCart)}><FaShoppingCart/>cart ({totalQuantity})</button>
 <div>
     <h1>Store</h1>
     <p>This is a store page</p>

@@ -1,21 +1,16 @@
 
-import './App.css'
-import Main from './component/main'
-import Header from './component/header'
-import ShoppingCart from './component/shoppingCart'
 import { useState } from 'react'
+import './App.css'
+import Header from './component/header'
+import Main from './component/main'
 
 function App() {
 
-  const [showModal, setShowModal] = useState(false)
+  const [showCart, setShowCart] = useState(false)
   return (
     <div className='app'>
-      <Header showModal={showModal} setShowModal={setShowModal}/>
-      <Main/>
-      <div className='cart container'>
-      {showModal && <ShoppingCart showModal={showModal} setShowModal={setShowModal}/>}
-
-      </div>
+      <Header showCart={showCart} setShowCart={setShowCart}/>
+      <Main showCart={showCart} setShowCart={setShowCart}/>
     </div>
   )
 }

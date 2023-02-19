@@ -3,19 +3,15 @@ import { useSelector } from "react-redux";
 import Product from "./product";
 import "./style.css"
 import { AiOutlineCloseCircle } from "react-icons/ai"
-const ShoppingCart = ({ showModal, setShowModal }) => {
+const ShoppingCart = () => {
 
     const { cartItems, cartTotalQuantity, cartTotalPrice } = useSelector((state) =>
         state.cart
     )
 
-    const closeModal = () => {
-        setShowModal(false)
-    }
 
     return (
         <>
-            <AiOutlineCloseCircle className="delet-icon" onClick={closeModal} />
             <div className="cart text-center mt-5">
                 <h1>Cart</h1>
                 <p>This is the Cart Page.</p>
