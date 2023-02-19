@@ -1,8 +1,6 @@
-import {FaShoppingCart} from "react-icons/fa"
+import { useDispatch } from "react-redux"
+import { addToCart } from "../../../redux/features/cartSlice"
 import "./style.css"
-import {useSelector,useDispatch} from "react-redux"
-import { addToCart } from "../../../redux/features/cartSlice" 
-import { useEffect } from "react"
 
 const Card = ({item}) => {
 

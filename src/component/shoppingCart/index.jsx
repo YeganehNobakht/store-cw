@@ -1,14 +1,16 @@
 
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import Product from "./product";
 import "./style.css"
 import { AiOutlineCloseCircle } from "react-icons/ai"
+import { emptyCart } from "../../redux/features/cartSlice";
 const ShoppingCart = () => {
 
     const { cartItems, cartTotalQuantity, cartTotalPrice } = useSelector((state) =>
         state.cart
     )
 
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -35,10 +37,10 @@ const ShoppingCart = () => {
                         <h3 className="m-0 txt-right">${cartTotalPrice}</h3>
                         <hr className="my-4" />
                         <div className="text-center">
-                            <button type="button" class="btn btn-primary mb-2">
+                            <button onClick={() => dispatch(emptyCart())}  type="button" className="btn btn-primary mb-2">
                                 CHECKOUT
                             </button>
-                            <button type="button" class="btn btn-outlineprimary btn-sm">
+                            <button type="button" className="btn btn-outlineprimary btn-sm">
                                 CLEAR
                             </button>
                         </div>
