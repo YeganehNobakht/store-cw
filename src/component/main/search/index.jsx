@@ -2,19 +2,16 @@
 import { useDispatch } from "react-redux";
 import "./style.css"
 
-const Search = ({onFilterHandler}) => {
+const Search = ({ onFilterHandler }) => {
 
     const submitForm = (e) => {
         onFilterHandler(e)
     }
     const dispatch = useDispatch()
     return (
-        <div className="row">
+        <div className="d-flex justify-content-between mb-4">
             <p># products</p>
-            {/* <form onSubmit={submitForm}> */}
-                <input type="text" placeholder="search product"  onChange={(e) => submitForm(e.target.value)} />
-            {/* </form> */}
-
+            <input type="text" placeholder="search product" onChange={(e) => submitForm(e.target.value)} />
         </div>
     )
 }

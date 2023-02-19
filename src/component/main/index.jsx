@@ -24,6 +24,10 @@ const Main = ({ showCart, setShowCart }) => {
 
             {!showCart ?
                 <div>
+                    <div className="text-center">
+                        <h1>Store</h1>
+                        <p>This is a store page</p>
+                    </div>
                     <Search onFilterHandler={filterProductsHandler} />
                     <div className="cards-container">
                         {
