@@ -28,7 +28,7 @@ const Main = ({ showCart, setShowCart }) => {
                         <h1>Store</h1>
                         <p>This is a store page</p>
                     </div>
-                    <Search onFilterHandler={filterProductsHandler} />
+                    <Search productCount={filterProducts.length} onFilterHandler={filterProductsHandler} />
                     <div className="cards-container">
                         {
                             filterProducts.map((product) => <Card key={product.id} item={product} />)
